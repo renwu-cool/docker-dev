@@ -3,7 +3,7 @@ export PAGER=less
 umask 022
 
 run (){
-if [ ! -d $1 ] ; then
+if [ -d $1 ] ; then
 for script in $1/*.sh ; do
 if [ -r $script ] ; then
 . $script
