@@ -61,7 +61,7 @@ COPY os/root/.zplugin.zsh /root/
 RUN \
 mkdir -p ~/.zplugin &&\
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin --depth=1 &&\
-cat /root/.zplugin.zsh|rg "program|source|light"|zsh &&\
+cat /root/.zplugin.zsh|rg "program|load|source|light"|zsh &&\
 source /root/.zplugin/plugins/romkatv---gitstatus/gitstatus.prompt.sh
 
 WORKDIR /
