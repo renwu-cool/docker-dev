@@ -1,5 +1,10 @@
 source ~/.zplugin/bin/zplugin.zsh
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+
 zinit ice wait lucid
 zinit light skywind3000/z.lua
 
