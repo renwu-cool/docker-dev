@@ -10,7 +10,7 @@ sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apk update && apk upgrade &&\
 apk add \
-procps \
+procps fzf \
 postgresql-dev gcompat g++ \
 ncurses ctags file lua exa lsof \
 supervisor shadow rsync \

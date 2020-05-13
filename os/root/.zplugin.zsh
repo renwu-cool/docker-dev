@@ -1,8 +1,5 @@
 source ~/.zplugin/bin/zplugin.zsh
 
-zplugin ice from"gh-r" as"program"
-zplugin light "junegunn/fzf-bin"
-
 zplugin ice wait lucid
 zplugin light skywind3000/z.lua
 
@@ -60,4 +57,7 @@ zplugin light tj/git-extras
 
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
+
+zplugin ice atload'!_zsh_git_prompt_precmd_hook' lucid
+zplugin light woefe/git-prompt.zsh
 
