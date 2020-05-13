@@ -36,7 +36,7 @@ gem install gist &&\
 wget https://raw.githubusercontent.com/eshizhan/dstat/master/dstat -O /usr/bin/dstat &&\
 chmod +x /usr/bin/dstat
 
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/zsh", "-c"]
 
 COPY os/usr/share/nvim /usr/share/nvim
 COPY os/etc/vim /etc/vim
