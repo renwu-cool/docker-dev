@@ -66,8 +66,7 @@ bindkey "^E" vi-end-of-line
 # zinit ice atload'!_zsh_git_prompt_precmd_hook' lucid
 # zinit light woefe/git-prompt.zsh
 
-zinit load romkatv/gitstatus
-source /root/.zplugin/plugins/romkatv---gitstatus/gitstatus.prompt.zsh
+source ~/.gitstatus/gitstatus.prompt.zsh
 
 RPROMPT='${GITSTATUS_PROMPT:+ $GITSTATUS_PROMPT}%'
 PROMPT='%237F%n@%m%f '
