@@ -56,20 +56,17 @@ git checkout "$(git describe --abbrev=0 --tags)"
 RUN yarn config set registry https://registry.npm.taobao.org &&\
 yarn global add coffeescript npm-check-updates
 
-COPY os/root/.zplugin.zsh /root/
+WORKDIR /
+COPY os .
+COPY boot .
 
 RUN \
 mkdir -p ~/.zplugin &&\
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin --depth=1 &&\
-cat /root/.zplugin.zsh|rg "program|load|source|light"|zsh &&\
-zinit ice depth=1 &&\
-zinit light romkatv/powerlevel10k
+cat /root/.zplugin.zsh|rg "program|load|source|light"|zsh 
 # git clone --depth=1 https://github.com/romkatv/gitstatus.git ~/.gitstatus &&\
 # source ~/.gitstatus/gitstatus.plugin.sh &&\
 
-WORKDIR /
-COPY os .
-COPY boot .
 
 # cd /root/.config/nvim/autoload/coc.nvim &&\
 # yarn
