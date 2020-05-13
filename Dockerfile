@@ -54,7 +54,7 @@ cd ~/.asdf &&\
 git checkout "$(git describe --abbrev=0 --tags)" 
 
 RUN yarn config set registry https://registry.npm.taobao.org &&\
-yarn global add coffeescript npm-check-updates &&\
+yarn global add pm2 concurrently coffeescript npm-check-updates &&\
 npm config set registry https://registry.npm.taobao.org
 
 WORKDIR /
