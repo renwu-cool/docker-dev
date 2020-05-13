@@ -11,7 +11,7 @@ sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apk update && apk upgrade &&\
 apk add \
-procps fzf \
+procps fzf less \
 postgresql-dev gcompat g++ \
 ncurses ctags file lua exa lsof \
 supervisor shadow rsync \
@@ -61,7 +61,8 @@ COPY os/root/.zplugin.zsh /root/
 RUN \
 mkdir -p ~/.zplugin &&\
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin --depth=1 &&\
-cat /root/.zplugin.zsh|rg "program|source|light"|zsh
+cat /root/.zplugin.zsh|rg "program|source|light"|zsh &&\
+source /root/.zplugin/plugins/romkatv---gitstatus/gitstatus.prompt.zsh
 
 WORKDIR /
 COPY os .
