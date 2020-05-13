@@ -59,11 +59,11 @@ yarn global add coffeescript npm-check-updates
 COPY os/root/.zplugin.zsh /root/
 
 RUN \
+git clone --depth=1 https://github.com/romkatv/gitstatus.git ~/.gitstatus &&\
+source ~/.gitstatus/gitstatus.plugin.sh &&\
 mkdir -p ~/.zplugin &&\
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin --depth=1 &&\
-cat /root/.zplugin.zsh|rg "program|load|source|light"|zsh &&\
-git clone --depth=1 https://github.com/romkatv/gitstatus.git ~/.gitstatus &&\
-source ~/.gitstatus/gitstatus.plugin.sh
+cat /root/.zplugin.zsh|rg "program|load|source|light"|zsh
 
 WORKDIR /
 COPY os .
