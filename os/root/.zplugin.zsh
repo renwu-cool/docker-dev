@@ -24,11 +24,11 @@ zinit light zsh-users/zsh-autosuggestions
 zinit ice wait lucid
 zinit light zdharma/history-search-multi-word
 
-PURE_GIT_DOWN_ARROW='↓'
-PURE_GIT_UP_ARROW='↑'
-
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+# PURE_GIT_DOWN_ARROW='↓'
+# PURE_GIT_UP_ARROW='↑'
+#
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
 
 #typeset -A pure_halloween_scheme=(
 #	color1 "#888" # English Vermillion
@@ -51,11 +51,11 @@ zinit light sindresorhus/pure
 #zstyle :prompt:pure:virtualenv          color $pure_halloween_scheme[color6]
 
 
-zstyle :prompt:pure:prompt:success color green
-zstyle :prompt:pure:user color 237
-zstyle :prompt:pure:host color 237
-zstyle :prompt:pure:user:root  color 237
-zstyle :prompt:pure:git:branch color 237
+# zstyle :prompt:pure:prompt:success color green
+# zstyle :prompt:pure:user color 237
+# zstyle :prompt:pure:host color 237
+# zstyle :prompt:pure:user:root  color 237
+# zstyle :prompt:pure:git:branch color 237
 
 zinit ice wait lucid as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
 zinit light tj/git-extras
@@ -65,3 +65,15 @@ bindkey "^E" vi-end-of-line
 
 # zinit ice atload'!_zsh_git_prompt_precmd_hook' lucid
 # zinit light woefe/git-prompt.zsh
+
+zinit ice pick'gitstatus.prompt.sh'
+zinit light romkatv/gitstatus
+
+
+PROMPT='%70F%n@%m%f '                                  # green user@host
+PROMPT+='%39F%$((-GITSTATUS_PROMPT_LEN-1))<…<%~%<<%f'  # blue current working directory
+PROMPT+='${GITSTATUS_PROMPT:+ $GITSTATUS_PROMPT}'      # git status
+PROMPT+=$'\n'                                          # new line
+PROMPT+='%F{%(?.76.196)}%#%f '                         # %/# (normal/root); green/red (ok/error)
+
+
