@@ -1,9 +1,10 @@
 FROM mhart/alpine-node as build 
 
-ENV TERM xterm-256color
 ENV LANG zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 ENV LANGUAGE zh_CN.UTF-8
+
+ENV TERM xterm-256color
 
 RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories &&\
 sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
