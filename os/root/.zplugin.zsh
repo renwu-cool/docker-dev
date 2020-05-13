@@ -1,5 +1,14 @@
 source ~/.zplugin/bin/zplugin.zsh
 
+if [[ -r "~/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "~/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -63,13 +72,5 @@ zinit light tj/git-extras
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
-# zinit ice atload'!_zsh_git_prompt_precmd_hook' lucid
-# zinit light woefe/git-prompt.zsh
 
-# source ~/.gitstatus/gitstatus.prompt.zsh
 
-RPROMPT='${GITSTATUS_PROMPT:+ $GITSTATUS_PROMPT}%'
-PROMPT='%237F%n@%m%f '
-PROMPT+='%242F%~%<<'
-PROMPT+=$'\n'
-PROMPT+='%243F%\►%f '
