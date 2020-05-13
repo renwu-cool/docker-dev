@@ -22,7 +22,7 @@ zinit light zdharma/history-search-multi-word
 PURE_GIT_DOWN_ARROW='↓'
 PURE_GIT_UP_ARROW='↑'
 
-zinit ice pick"async.zsh" src"pure.zsh"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 #typeset -A pure_halloween_scheme=(
