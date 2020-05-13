@@ -58,6 +58,5 @@ zinit light tj/git-extras
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
-zinit ice atload'!_zsh_git_prompt_precmd_hook' lucid
-zinit light woefe/git-prompt.zsh
-
+# zinit ice atload'!_zsh_git_prompt_precmd_hook' lucid
+# zinit light woefe/git-prompt.zsh
