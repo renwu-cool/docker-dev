@@ -2,6 +2,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PAGER=less
 umask 022
 
+setopt +o nomatch
+
 run (){
 if [ -d $1 ] ; then
 for script in $1/*.sh ; do
