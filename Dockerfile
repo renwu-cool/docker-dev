@@ -41,6 +41,7 @@ SHELL ["/bin/zsh", "-c"]
 COPY os/usr/share/nvim /usr/share/nvim
 COPY os/etc/vim /etc/vim
 
+RUN pip install yapf flake8
 RUN \
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh &&\
 bash /tmp/installer.sh /etc/vim/dein &&\

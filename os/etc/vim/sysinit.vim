@@ -2,9 +2,8 @@
 "
 " 插件管理
 " neovim 首先执行下面的命令安装
-" curl -fLo /etc/vim/runtime/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 " 安装命令 
-" sudo nvim +PlugInstall +qall 
+" nvim +'call dein#install()' 
 """""""""""""""""""""""""""""""""""""""
 "filetype off                  " required
 
@@ -92,6 +91,10 @@ endif
 " Put this in vimrc or a plugin file of your own.
 " " After this is configured, :ALEFix will try and fix your JS code with
 " ESLint.
+let g:ale_linters = {
+\  'go': ['gometalinter', 'gofmt'],
+\  'python': ['flake8'],
+\}
 let g:ale_fixers = {
 \   'python': ['yapf'],
 \}
@@ -417,7 +420,6 @@ autocmd BufWritePre *.vue :syntax sync fromstart
 
 
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
-let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
 
 set backupcopy=yes
 set nofoldenable
@@ -428,4 +430,5 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:go_metalinter_command="golangci-lint"
-set ts=2 sw=2 expandtab softtabstop=2  
+set ts=2 sw=2 expandtab softtabstop=2
+autocmd FileType python setlocal et sta sw=2 sts=2
